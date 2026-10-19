@@ -264,17 +264,20 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 03 / JOURNEY */}
-        <section id="journey" className="relative h-dvh w-full shrink-0 overflow-y-auto overscroll-contain bg-white">
+       {/* 03 / JOURNEY */}
+        <section id="journey" className="relative h-dvh w-full shrink-0 overflow-hidden bg-white">
+          {/* Perluasan area background hijau untuk mobile: top-[8%] bottom-[10%] */}
           <div
-            className="absolute inset-x-0 top-[18%] bottom-[14%] bg-[#20320e]"
+            className="absolute inset-x-0 top-[8%] bottom-[10%] bg-[#20320e] sm:top-[18%] sm:bottom-[14%]"
             style={{ clipPath: "polygon(0 0, 100% 8%, 100% 100%, 0 92%)" }}
           />
-          <div className="relative z-10 mx-[7%] pt-[22dvh] pb-28 sm:mx-[10%] sm:pt-[22dvh] sm:pb-20">
+          
+          {/* Pengurangan padding atas pada mobile: pt-[14dvh] dan penyesuaian pb */}
+          <div className="relative z-10 mx-[7%] pt-[14dvh] pb-12 sm:mx-[10%] sm:pt-[22dvh] sm:pb-20">
             <p className="mb-1 text-[10px] font-medium tracking-[0.25em] text-[#d5e0cb] sm:text-xs">
               03 / PERSONAL HISTORY
             </p>
-            <h2 className="mb-6 font-[family-name:var(--font-display)] text-3xl font-light text-white sm:text-5xl">
+            <h2 className="mb-4 font-[family-name:var(--font-display)] text-3xl font-light text-white sm:mb-6 sm:text-5xl">
               The journey so far.
             </h2>
 
@@ -282,7 +285,8 @@ export default function Home() {
               {history.map((item, index) => (
                 <article
                   key={item.period}
-                  className={`grid grid-cols-[65px_1fr] gap-3 border-b border-white/20 py-3.5 sm:grid-cols-[80px_1fr] sm:gap-4 sm:py-4 ${
+                  /* Pengurangan gap dan padding vertikal (py) pada perangkat mobile agar lebih rapat */
+                  className={`grid grid-cols-[65px_1fr] gap-2 border-b border-white/20 py-2.5 sm:grid-cols-[80px_1fr] sm:gap-4 sm:py-4 ${
                     index % 2 === 0 ? "sm:border-r sm:pr-6" : "sm:pl-6"
                   }`}
                 >
@@ -290,11 +294,12 @@ export default function Home() {
                     0{index + 1} /<br />{item.period}
                   </div>
                   <div>
-                    <h3 className="mb-0.5 font-[family-name:var(--font-display)] text-sm font-medium text-white sm:text-base">
+                    <h3 className="mb-0.5 font-[family-name:var(--font-display)] text-[13px] font-medium text-white sm:text-base">
                       {item.title}
                     </h3>
-                    <p className="mb-1 text-[10px] font-medium text-[#d5e0cb]">{item.detail}</p>
-                    <p className="text-[11px] leading-4 text-white/80 sm:text-xs">{item.description}</p>
+                    <p className="mb-1 text-[9px] font-medium text-[#d5e0cb] sm:text-[10px]">{item.detail}</p>
+                    {/* Penyesuaian jarak antar baris (leading) pada deskripsi */}
+                    <p className="text-[10px] leading-[1.4] text-white/80 sm:text-xs sm:leading-4">{item.description}</p>
                   </div>
                 </article>
               ))}
