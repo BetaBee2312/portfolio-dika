@@ -265,12 +265,12 @@ export default function Home() {
         </section>
 
         {/* 03 / JOURNEY */}
-        <section id="journey" className="relative h-dvh w-full shrink-0 overflow-hidden bg-white">
+        <section id="journey" className="relative h-dvh w-full shrink-0 overflow-y-auto overscroll-contain bg-white">
           <div
             className="absolute inset-x-0 top-[18%] bottom-[14%] bg-[#20320e]"
             style={{ clipPath: "polygon(0 0, 100% 8%, 100% 100%, 0 92%)" }}
           />
-          <div className="absolute left-[7%] right-[7%] top-[22%] z-10 sm:left-[10%] sm:right-[10%]">
+          <div className="relative z-10 mx-[7%] pt-[22dvh] pb-28 sm:mx-[10%] sm:pt-[22dvh] sm:pb-20">
             <p className="mb-1 text-[10px] font-medium tracking-[0.25em] text-[#d5e0cb] sm:text-xs">
               03 / PERSONAL HISTORY
             </p>
